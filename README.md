@@ -1,27 +1,78 @@
-# MatomoAngularDocker
+![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+# Matomo Angular Docker
 
-## Development server
+This is a simple Angular project that connects to a Matomo docker container.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 
-## Code scaffolding
+## 🚀 About Me
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Hi all 👋🏼 , my name is Fábio. I'm a curious, self-taught and passionate software developer based in Portugal.
 
-## Build
+## Tutorial
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+I've written a lengthy tutorial in dev.to, if you're in the mood you can read it on www.dev.to.
 
-## Running unit tests
+For the _tldr;_ version keep up with the `README.MD` ;)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Acknowledgements
 
-## Running end-to-end tests
+- [matomo-org/docker](https://github.com/matomo-org/docker)
+- [EmmanuelRoux/ngx-matomo/](https://github.com/EmmanuelRoux/ngx-matomo/)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Setting up Docker
 
-## Further help
+Navigate to the `🗂 tools` folder and run the command `docker-compose up`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+When the docker has successfully run, navigate to http://localhost:8080 and initiate the Matomo configuration.
+
+## Matomo Configuration
+
+Make sure that the inputs asked by Matomo match your settings from the `📁 db.env` file.
+
+Proceed with the wizard until you've finished all the steps.
+
+You won't be able to use Matomo yet because of an issue with the trusted host.
+
+### Fixing trusted host issue
+
+Open the terminal and run the command `docker exec -u 0 -it matomo_app /bin/sh` this will get you inside the Matomo app container (use docker ps to list your containers).
+
+Using `vi` edit the file `vi config/config.ini.php` and add the following settings under the `[General]` section:
+
+```javascript
+[General]
+trusted_hosts[] = "localhost:8080"
+cors_domains[] = *
+```
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/fborges42/matomo-angular-docker.git
+```
+
+Go to the project directory
+
+```bash
+  cd matomo-angular-docker
+```
+
+Install dependencies
+
+```bash
+  npm i
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+## Feedback
+
+If you have any feedback, please reach out to me fake@fake.com
