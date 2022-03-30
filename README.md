@@ -1,4 +1,4 @@
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Logo](https://res.cloudinary.com/practicaldev/image/fetch/s--R-wMI7pR--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/72f7uhyzj3ixgnrodcdp.png)
 
 # Matomo Angular Docker
 
