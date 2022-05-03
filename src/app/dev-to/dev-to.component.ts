@@ -5,7 +5,10 @@ import { Component, OnInit } from "@angular/core";
   template: `
     <div style="margin-bottom: 8px">
       Sometimes I write about stuff on
-      <a target="_blank" style="margin-left:2px" href="dev.to/fborges42"
+      <a
+        style="margin-left:2px"
+        target="_blank"
+        href="http://www.dev.to/fborges42"
         >dev.to</a
       >
     </div>
